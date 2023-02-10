@@ -15,7 +15,7 @@ public:
 };
 
 node* createTree(node* root){
-    cout << "Enter Data : ";
+    cout << "Enter Data : "<<endl;
     int data;
 
     int rightdata;
@@ -31,6 +31,7 @@ node* createTree(node* root){
     return root;
 }
 int main(){
-    cout<<"hello world";
+    node* root=NULL;
+    root=createTree(root);
     return 0;
 }
