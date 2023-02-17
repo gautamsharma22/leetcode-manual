@@ -4,7 +4,6 @@
 #include<map>
 #include<sstream>
 using namespace std;
-
 struct Node {
     int data;
     Node *left;
@@ -15,7 +14,6 @@ struct Node {
         left = right = NULL;
     }
 };
-
 
 Node *buildTree(string str) {
     if (str.length() == 0 || str[0] == 'N')
