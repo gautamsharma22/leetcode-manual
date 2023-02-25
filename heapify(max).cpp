@@ -3,18 +3,18 @@
 using namespace std;
 
 void heapify(vector<int> &arr,int n,int i){
-    int large=i;
+    int large_index=i;
     int left=2*i;
     int right=(2*i)+1;
-    if(left<=n && arr[large] < arr[left]){
-        large=left;
+    if(left<=n && arr[large_index] < arr[left]){
+        large_index=left;
     }
-    if(right <= n && arr[large] < arr[right]){
-        large=right;
+    if(right <= n && arr[large_index] < arr[right]){
+        large_index=right;
     }
-    if(large != i){
-        swap(arr[large],arr[i]);
-        heapify(arr,n,large);
+    if(large_index != i){
+        swap(arr[large_index],arr[i]);
+        heapify(arr,n,large_index);
     }
 }
 
