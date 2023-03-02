@@ -1,4 +1,5 @@
-class Solution {
+class Solution
+{
 public:
     int compress(vector<char>& chars) {
         int n=chars.size();
@@ -13,8 +14,8 @@ public:
             int count=j-i;
             if(i>0)chars[last++]=chars[i];
             if (count > 1) {
-                string str = to_string(count);
-                for (char c : str) {
+                string str1 = to_string(count);
+                for (char c : str1) {
                     chars[last++]=c;
                 }
             }
@@ -22,4 +23,5 @@ public:
         }
         return last;
     }
+
 };
