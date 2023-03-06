@@ -1,18 +1,17 @@
 #include <bits/stdc++.h> 
-void ts(int node,stack<int> &s,unordered_map<int,list<int>> &adj,vector<bool> &visited){
+void ts(int node,vector<int> &ans,vector<vector<int>> &adj,vector<bool> &visited){
 	visited[node]=true;
 	for(auto i:adj[node]){
 		if(!visited[i]){
-			ts(i,s,adj,visited);
+			ts(i,ans,adj,visited);
 		}
 	}
-	s.push(node);
+	ans.insert(ans.begin(),node);
 }
 vector<int> topologicalSort(vector<vector<int>> &edges, int v, int e)  {
     vector<int> ans;
-	unordered_map<int,list<int>> adj;
-	vector<bool> visited(v); 
-	stack<int> s;
+	vector<vector<int>> adj(v);
+	vector<bool> visited(v);
 	for(int i=0;i<e;i++){
 		int u=edges[i][0];
 		int v=edges[i][1];
@@ -20,13 +19,8 @@ vector<int> topologicalSort(vector<vector<int>> &edges, int v, int e)  {
 	}
 	for(int i=0;i<v;i++){
 		if(!visited[i]){
-			ts(i,s,adj,visited);
+			ts(i,ans,adj,visited);
 		}
-	}
-
-	while(!s.empty()){
-		ans.push_back(s.top());
-		s.pop();
 	}
 	return ans;
 }
