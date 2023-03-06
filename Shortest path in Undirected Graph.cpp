@@ -1,6 +1,4 @@
-#include<unordered_map>
-#include<list>
-#include<queue>
+#include<bits/std++.h>
 vector<int> shortestPath( vector<pair<int,int>> edges , int n , int m, int s , int t){
 	vector<vector<int>> adj(n+1);
 	for(int i=0;i<edges.size();i++){
