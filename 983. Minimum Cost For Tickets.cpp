@@ -56,7 +56,7 @@ int helperTab(vector<int> &days, vector<int> &costs)
             dayCovered++;
         }
         int cost3 = costs[2] + dp[dayCovered];
-        dp[i] = min(cost1, min(cost2, cost3));
+        dp[i] = min(cost1, min(cost2, cost3)); // Store the minimum
     }
     return dp[0];
 }
