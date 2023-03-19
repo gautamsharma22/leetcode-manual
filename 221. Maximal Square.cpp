@@ -30,7 +30,7 @@ public:
         int bottom = helperMem(matrix, i + 1, j, maximum, dp);
         if (matrix[i][j] == '1')
         {
-            int ans = 1 + min(right, min(diag, bottom));
+            int ans = 1 + min(right, min(diag, bottom)); // Store maximum Number of 1's Found
             maximum = max(ans, maximum);
             dp[i][j] = ans;
             return dp[i][j];
