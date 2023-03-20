@@ -48,4 +48,31 @@ public:
         // return helper(nums,0,sum,dp);
         return helperTab(nums, sum, n);
     }
+    bool canPartition_MemoryOptimized(vector<int> &nums)
+    {
+        int sum = 0;
+        for (auto i : nums)
+            sum += i;
+        if (sum % 2 != 0)
+            return false;
+        sum = sum / 2;
+        int n = nums.size();
+        vector<int> current(sum + 1, 0);
+        vector<int> next(sum + 1, 0);
+        current[0] = 1;
+        next[0] = 1;
+        for (int index = n - 1; index >= 0; index--)
+        {
+            for (int target = 0; target <= sum; target++)
+            {
+                bool include = 0;
+                if (target - nums[index] >= 0)
+                    include = next[target - nums[index]];
+                bool exclude = next[target];
+                current[target] = include || exclude;
+            }
+            next = current;
+        }
+        return current[sum];
+    }
 };
