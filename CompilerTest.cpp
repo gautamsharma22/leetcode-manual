@@ -3,6 +3,8 @@ using namespace std;
 
 int main()
 {
-    cout << "Complier Working !!";
+    for (int i = 0; i < 10;i++){
+        cout << "hello" << i;
+    }
     return 0;
 }
