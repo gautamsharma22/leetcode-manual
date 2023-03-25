@@ -17,7 +17,7 @@ public:
             ans = min(ans, minSwapRec(nums1, nums2, index + 1, 0));
         // if its non increasing then we need to swap
         if (nums1[index] > prev2 && nums2[index] > prev1)
-        { // Here we are checking if after swafter swapping will it make strictly increasing order then swap...
+        { // Here we are checking if after swafter swapping will it make strictly increasing  then Only swap...
             ans = min(ans, 1 + minSwapRec(nums1, nums2, index + 1, 1));
         }
         return ans;
