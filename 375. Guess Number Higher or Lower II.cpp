@@ -10,7 +10,8 @@ public:
         {
             int lower = i + helper(start, i - 1);
             int higher = i + helper(i + 1, end);
-            ans = min(ans, max(lower, higher));
+            int currentAns = max(lower, higher);
+            ans = min(ans, currentAns);
         }
         return ans;
     }
@@ -25,7 +26,8 @@ public:
         {
             int lower = i + helper(start, i - 1, dp);
             int higher = i + helper(i + 1, end, dp);
-            ans = min(ans, max(lower, higher));
+            int currentAns = max(lower, higher);
+            ans = min(ans, currentAns);
         }
         return dp[start][end] = ans;
     }
@@ -45,7 +47,8 @@ public:
                 {
                     int lower = i + dp[start][i - 1];
                     int higher = i + dp[i + 1][end];
-                    ans = min(ans, max(lower, higher));
+                    int currentAns = max(lower, higher);
+                    ans = min(ans, currentAns);
                 }
                 dp[start][end] = ans;
             }
