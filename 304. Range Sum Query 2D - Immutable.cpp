@@ -4,7 +4,8 @@ public:
     /*
     Approach :
     Similar problem as Range Sum Query 1D
-    Just Used a loop to increment row.
+    Use a loop to increment row and increment the sum.
+    Return Calculated Sum.
     */
     vector<vector<int>> prefix;
     NumMatrix(vector<vector<int>> &matrix)
