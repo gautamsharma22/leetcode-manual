@@ -12,6 +12,7 @@
     "vector": "cpp",
     "__bit_reference": "cpp",
     "bitset": "cpp",
-    "chrono": "cpp"
+    "chrono": "cpp",
+    "variant": "cpp"
   }
 }
